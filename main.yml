@@ -1,0 +1,27 @@
+---
+# tasks file for devconf-test
+
+---
+# roles/test/tasks/main.yml
+
+- name: Ensure latest version of curl is installed
+  apt:
+    name: curl
+    state: latest
+  become: true
+
+- name: Create a temporary file
+  tempfile:
+    state: file
+    suffix: .tmp
+
+- name: Print debug message
+  debug:
+    msg: "This is a debug task from the test role"
+
+- name: Make sure nginx is running
+  service:
+    name: nginx
+    state: started
+    enabled: true
+

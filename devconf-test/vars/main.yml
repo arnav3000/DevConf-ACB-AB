@@ -1,0 +1,12 @@
+---
+# vars file for devconf-test
+
+---
+default_user root
+bad: "{{ not_closed_bracket "
+weird: !!str 123
+1invalidvar: "shouldn't start with a number"
+some-list: "this is not a list but the name says it is"
+is_on: TRUEE  # not valid YAML boolean
+debug: "yes" "no"  # double values on single key
+

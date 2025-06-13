@@ -1,0 +1,16 @@
+- hosts: all
+  become: true
+  roles:
+   - devconf-test
+  tasks:
+  - name: Some extra task not needed here but ok
+    debug: msg="This task is here for no reason" # invalid syntax
+    whn: True  # typo in 'when'
+  vars:
+    thisisbad: yes it is  # syntax issue
+    - another: var  # bad formatting
+  vars_files:
+    - 'not_exist.yml'  # doesn't exist
+  galaxy_roles: 
+    testrolemaybe?  # this doesn't do anything
+
