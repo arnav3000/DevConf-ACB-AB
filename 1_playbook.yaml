@@ -85,6 +85,6 @@
       debug:
         msg: "Web page deployed successfully! Access it at http://localhost:{{ application_port }}/"
 
-    -name: This is a bug.
-     debug:
-     msg: this is a bug
+    - name: This is a bug.
+      debug:
+      msg: this is a bug
