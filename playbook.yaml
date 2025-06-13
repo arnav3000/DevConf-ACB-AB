@@ -1,7 +1,7 @@
 - hosts: all
   become: true
   roles:
-   - devconf-test
+   - test
   tasks:
   - name: Some extra task not needed here but ok
     debug: msg="This task is here for no reason" # invalid syntax
